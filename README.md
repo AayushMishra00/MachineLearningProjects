@@ -1,38 +1,17 @@
-# Vehicle Detection and Counting
+# Machine Learning Projects
 
-Detects, tracks and counts vehicles in traffic video with YOLOv8 and the SORT tracker.
+Computer vision and machine learning projects by Aayush Mishra, B.S. Computer Science (Honors) at The University of Texas at Arlington.
 
-## How It Works
-1. **Region of interest:** `car_mask.png` blacks out everything except the road, so only relevant vehicles are detected.
-2. **Detection:** YOLOv8 nano (`yolov8n.pt`) detects objects in each frame. Only cars, buses, trucks and motorbikes with confidence above 0.3 are kept.
-3. **Tracking:** SORT (`sort.py`) assigns each vehicle a persistent ID across frames (max age 20 frames, 3 hits to confirm, IoU threshold 0.3).
-4. **Counting:** a vehicle is counted when its center crosses a virtual line. Each tracker ID is counted only once, which prevents double counting.
+## Projects
 
-The output window shows each tracked vehicle's ID, the counting line, the running count and the processing frame rate.
-
-## Files
-| File | Purpose |
-|---|---|
-| `main.py` | Detection, tracking and counting pipeline |
-| `sort.py` | SORT multi-object tracker |
-| `cars.mp4` | Sample traffic video |
-| `car_mask.png` | Region-of-interest mask for the sample video |
-
-## Setup
-```bash
-pip install ultralytics opencv-python cvzone numpy filterpy scikit-image scipy matplotlib
-```
-The YOLOv8 weights (`yolov8n.pt`) download automatically on first run.
-
-## Usage
-1. In `main.py`, update the paths in `cv2.VideoCapture(...)` and `cv2.imread(...)` to point to `cars.mp4` and `car_mask.png`.
-2. Run `python main.py`.
-3. Press any key to advance one frame, or **Q** to quit. The script waits for a key on every frame.
-
-## Possible Improvements
-- Measure counting accuracy against a hand-labeled count for the video.
-- Count each vehicle class separately and by direction of travel.
-- Play the video continuously instead of frame by frame.
+| # | Project | Topics | Result |
+|---|---------|--------|--------|
+| 1 | [ASL Alphabet Recognition](./ASL%20Detector/) | Computer vision, MediaPipe hand landmarks, Random Forest, real-time webcam inference | 99.7% accuracy (5-fold CV) on 8,512 samples, 26 letters |
+| 2 | [Vehicle Detection and Counting](./VehicleDetection/) | YOLOv8 object detection, SORT multi-object tracking, video processing | Counts unique vehicles crossing a line in traffic video |
+| 3 | [Diabetes Classification](./DiabetesClassification/) | Logistic Regression, model comparison, missing-value imputation, threshold tuning | AUC-ROC 0.82, recall 0.71 |
 
 ## Tech Stack
-Python, Ultralytics YOLOv8, OpenCV, cvzone, SORT, NumPy
+Python, OpenCV, MediaPipe, Ultralytics YOLOv8, scikit-learn, XGBoost, pandas, NumPy, matplotlib, seaborn
+
+## Running a Project
+Each folder has its own README with setup steps. All projects use Python 3.
