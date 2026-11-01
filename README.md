@@ -1,8 +1,14 @@
-# MachineLearningProjects
+# Machine Learning Projects
+
+Computer vision and machine learning projects by Aayush Mishra, B.S. Computer Science (Honors) at The University of Texas at Arlington.
+
 ## Projects
 
 | # | Project | Topics | Result |
 |---|---------|--------|--------|
-| 1 | [ASL Detector](./01-asl-detector/) | Computer vision, OpenCV, real-time detection | Live webcam detection |
-| 2 | [Diabetes Classification](./02-diabetes-classification/) | Logistic Regression, class imbalance, threshold tuning | AUC 0.82 |
-| 3 | [Vehicle Counter](./02-vehicle-counter/) | YOLOv8, object detection, video processing | 90–95% detection accuracy |
+| 1 | [ASL Alphabet Recognition](./ASL%20Detector/) | Computer vision, MediaPipe hand landmarks, Random Forest, real-time webcam inference | 99.7% accuracy (5-fold CV) on 8,512 samples, 26 letters |
+| 2 | [Vehicle Detection and Counting](./VehicleDetection/) | YOLOv8 object detection, SORT multi-object tracking, video processing | Counts unique vehicles crossing a line in traffic video |
+| 3 | [Diabetes Classification](./DiabetesClassification/) | Logistic Regression, model comparison, missing-value imputation, threshold tuning | AUC-ROC 0.82, recall 0.71 |
+
+## Tech Stack
+Python, OpenCV, MediaPipe, Ultralytics YOLOv8,
